@@ -13,6 +13,8 @@ gem 'sinatra-contrib'
 
 gem 'byebug'
 
+gem 'mail', '~> 2.7'
+
 group :test do
   gem 'rack-test'
 end
