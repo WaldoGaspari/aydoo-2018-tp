@@ -39,6 +39,23 @@
               <item name="aydoo-2018-tp" type="b2602c69:ProjectViewProjectNode" />
               <item name="aydoo-2018-tp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="aydoo-2018-tp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aydoo-2018-tp" type="462c0819:PsiDirectoryNode" />
+              <item name="MailMerger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aydoo-2018-tp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aydoo-2018-tp" type="462c0819:PsiDirectoryNode" />
+              <item name="MailMerger" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aydoo-2018-tp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aydoo-2018-tp" type="462c0819:PsiDirectoryNode" />
+              <item name="MailMerger" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -63,6 +80,7 @@
       </list>
     </option>
   </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -73,12 +91,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527976832102</updated>
-      <workItem from="1527976833711" duration="246000" />
+      <workItem from="1527976833711" duration="849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246000" />
+    <option name="totallyTimeSpent" value="849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
