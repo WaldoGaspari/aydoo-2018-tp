@@ -82,7 +82,6 @@ DEPENDENCIES
   rspec
   sinatra
   sinatra-contrib
-  mail
 
 RUBY VERSION
    ruby 2.2.0p0
