@@ -93,5 +93,25 @@ class Etiquetas_spec
     end
 
   end
+  describe 'etiqueta suma' do
 
+    it 'aplico suma' do
+      texto = " asf <sum(17,23)>:asdvgev aomimv "
+      aplicador = Etiquetas.new
+
+      texto = aplicador.aplicarSuma(texto)
+
+      expect(texto).to eq " asf 40:asdvgev aomimv "
+    end
+
+    it 'aplico suma y no hay suma' do
+      texto = " asf <sm(17,23)>:asdvgev aomimv "
+      aplicador = Etiquetas.new
+
+      texto = aplicador.aplicarSuma(texto)
+
+      expect(texto).to eq " asf <sm(17,23)>:asdvgev aomimv "
+    end
+
+  end
 end

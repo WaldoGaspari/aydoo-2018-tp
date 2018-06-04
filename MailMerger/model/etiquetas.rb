@@ -38,17 +38,33 @@ class Etiquetas
       if jsonParseado['datos'][campoBuscado].nil?
         aReemplazar = cadena[indiceEmpty..indiceString]
         cadena = cadena.gsub(aReemplazar, campoPorReemplazar)
-        puts "es nil! "
       end
     end
     cadena
   end
 
-=begin
-<date:i> : debe reemplazarse por la fecha actual en formato inverso: AAAA-MM-DD
-<date:d>: debe reemplazarse por la fecha actual en formato: DD-MM-AAAA
-<empty(pais,argentina)>: si el placeholder “pais” no está definido en el archivo de datos, entonces utilizar el valor “argentina”
-<sum(monto1, monto2)>: debe reemplazarse por la suma de los placesholders monto1 y monto2
-=end
+  def aplicarSuma(cadena)
+    if (cadena.include?  "<sum(")
+      indiceSuma = cadena.index('<sum(')
+      primerNro = ""
+      segundoNro = ""
+      indice = indiceSuma + 5
+      while cadena[indice] != ',' do
+        primerNro = primerNro + cadena[indice]
+        indice = indice + 1
+      end
+      indice = indice + 1
+      while cadena[indice] != ')' do
+        segundoNro = segundoNro + cadena[indice]
+        indice = indice + 1
+      end
+      indice = indice + 1
 
+      suma = primerNro.to_i + segundoNro.to_i
+      aReemplazar = cadena[indiceSuma..indice]
+      cadena = cadena.gsub(aReemplazar, suma.to_s)
+    end
+    cadena
+  end
+  
 end
