@@ -6,8 +6,8 @@ describe 'enviar mails' do
 
   let(:envio) { EnvioDeMails.new }
 
-  it 'se envia un mail' do
-    expect(envio.enviar.to be_truthy)
+  it 'se envia un mail dando los parametros' do
+    expect(envio.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba').to be_truthy)
   end
 
 end

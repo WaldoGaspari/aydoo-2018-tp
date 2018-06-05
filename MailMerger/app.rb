@@ -3,6 +3,7 @@ require 'sinatra/json'
 require 'json'
 require 'net/smtp'
 require_relative '../MailMerger/model/merger'
+require_relative '../MailMerger/model/envio_de_mails'
 
 configure do
   set :bind, '0.0.0.0'
