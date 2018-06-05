@@ -10,6 +10,7 @@ gem 'rb-readline'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'mail'
 
 gem 'byebug'
 
