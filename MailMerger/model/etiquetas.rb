@@ -5,10 +5,10 @@ class Etiquetas
 
   def aplicarFecha(cadena)
     fecha = Date.today
-    fechaDirecta = fecha.day.to_s + "-" + fecha.month.to_s + "-" + fecha.year.to_s
-    cadena = cadena.gsub("<date:d>", fechaDirecta)
-    fechaInversa = fecha.year.to_s + "-" + fecha.month.to_s + "-" + fecha.day.to_s
-    cadena = cadena.gsub("<date:i>", fechaInversa)
+    fecha_directa = fecha.day.to_s + "-" + fecha.month.to_s + "-" + fecha.year.to_s
+    cadena = cadena.gsub("<date:d>", fecha_directa)
+    fecha_inversa = fecha.year.to_s + "-" + fecha.month.to_s + "-" + fecha.day.to_s
+    cadena = cadena.gsub("<date:i>", fecha_inversa)
 
     cadena
   end
@@ -16,28 +16,28 @@ class Etiquetas
 
   def aplicarEmpty(cadena, jsonEntrada)
     if (cadena.include?  "<empty(")
-      indiceEmpty = cadena.index('<empty(')
-      campoBuscado = ""
-      campoPorReemplazar = ""
-      indiceString = indiceEmpty + 7
-      while cadena[indiceString] != ',' do
-        campoBuscado = campoBuscado + cadena[indiceString]
-        indiceString = indiceString + 1
+      indice_empty = cadena.index('<empty(')
+      campo_buscado = ""
+      campo_por_reemplazar = ""
+      indice_string = indice_empty + 7
+      while cadena[indice_string] != ',' do
+        campo_buscado = campo_buscado + cadena[indice_string]
+        indice_string = indice_string + 1
       end
-      indiceString = indiceString + 1
-      while cadena[indiceString] != ')' do
-        campoPorReemplazar = campoPorReemplazar + cadena[indiceString]
-        indiceString = indiceString + 1
+      indice_string = indice_string + 1
+      while cadena[indice_string] != ')' do
+        campo_por_reemplazar = campo_por_reemplazar + cadena[indice_string]
+        indice_string = indice_string + 1
       end
-      indiceString = indiceString + 1
+      indice_string = indice_string + 1
 
 
       json = jsonEntrada.to_json
       jsonParseado = JSON.parse(json)
 
-      if jsonParseado['datos'][campoBuscado].nil?
-        aReemplazar = cadena[indiceEmpty..indiceString]
-        cadena = cadena.gsub(aReemplazar, campoPorReemplazar)
+      if jsonParseado['datos'][campo_buscado].nil?
+        aReemplazar = cadena[indice_empty..indice_string]
+        cadena = cadena.gsub(aReemplazar, campo_por_reemplazar)
       end
     end
     cadena

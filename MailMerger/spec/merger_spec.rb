@@ -34,4 +34,13 @@ describe 'enviar mails a traves de un JSON' do
     expect(merger.enviarMails(json)).to be_truthy
   end
 
+  it 'llenar plantilla devuelve el formulario lleno' do
+    entregado = "Hola <nombre>, te estamos invitando a mi <nombre_evento>"
+    datosEntregados = {
+        "nombre": "nigga",
+        "nombre_evento":"cumpleañito",
+    }
+    expect(merger.llenarPlantilla(entregado, datosEntregados)).to eq "Hola nigga, te estamos invitando a mi cumpleañito"
+  end
+
 end
