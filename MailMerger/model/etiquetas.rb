@@ -66,5 +66,12 @@ class Etiquetas
     end
     cadena
   end
+
+  def aplicar_todas(cadena, json)
+    cadena = self.aplicarFecha(cadena)
+    cadena = self.aplicarEmpty(cadena,json)
+    cadena = self.aplicarSuma(cadena)
+    cadena
+  end
   
 end

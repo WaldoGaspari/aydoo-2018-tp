@@ -114,4 +114,42 @@ class Etiquetas_spec
     end
 
   end
+
+  describe 'todas las etiquetas' do
+
+    it 'aplico etiqueta y empty NO existe' do
+      texto = " asf <date:d> aomimv asf <empty(pais,italia)> aomimv <date:i> suma <sum(19,11)> deberia ser 30"
+      js = {
+          "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollarÃ¡ en <lugar_del_evento>, el dÃ­a <fecha_del_evento>. Por favor confirmar su participaciÃ³n enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
+          "contactos":[
+              {
+              "nombre":"juan",
+          "apellido":"perez",
+          "mail":"juanperez@test.com"
+      },
+          {
+              "nombre":"maria",
+              "apellido":"gonzalez",
+              "mail":"mariagonzalez@test.com"
+          }
+      ],
+          "datos":{
+          "asunto":"InvitaciÃ³n a fiesta de fin de aÃ±o",
+          "nombre_evento":"la cena de fin de aÃ±o de la UNTREF",
+          "lugar_evento":"el Centro de estudios (avenida Directorio 887, Caseros)",
+          "fecha_del_evento":"5 de diciembre",
+          "Mail_de_confirmacion":"fiesta@untref.com",
+      }
+      }
+      js.to_json
+
+      aplicador = Etiquetas.new
+
+      texto = aplicador.aplicar_todas(texto,js)
+
+      expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv asf italia aomimv #{Date.today.year}-#{Date.today.month}-#{Date.today.day} suma 30 deberia ser 30"
+    end
+
+
+  end
 end

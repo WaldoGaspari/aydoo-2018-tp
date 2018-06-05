@@ -19,12 +19,15 @@ class Merger
       @mensajeConDatos = @mensajeConDatos.gsub(reemplazar, dato[1].to_s)
     end
 
+    etiquetas = Etiquetas.new
+
     destinatario.each do |destinatarioIterado|
       cuerpoMail = @mensajeConDatos
       destinatarioIterado.each do |datosDestinatario|
         reemplazar = "<" + datosDestinatario[0].to_s + ">"
         cuerpoMail = cuerpoMail.gsub(reemplazar, datosDestinatario[1].to_s)
       end
+      cuerpoMail = etiquetas.aplicar_todas(cuerpoMail,json_parseado)
       @envio.enviar(datos['remitente'].to_s, destinatarioIterado['mail'].to_s, datos['asunto'].to_s, cuerpoMail)
      end
 
