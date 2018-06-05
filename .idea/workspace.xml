@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc0a2f7-2416-429f-a7f9-3929cd961c87" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/MailMerger/model/etiquetas.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/model/etiquetas.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailMerger/model/merger.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/model/merger.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailMerger/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/Gemfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,16 +14,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MailMerger/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="merger.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="merger.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailMerger/model/merger.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="293">
@@ -109,11 +108,11 @@
         <option value="$PROJECT_DIR$/MailMerger/model/envio_de_mails.rb" />
         <option value="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/app.rb" />
-        <option value="$PROJECT_DIR$/MailMerger/Gemfile" />
         <option value="$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/model/etiquetas.rb" />
         <option value="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/model/merger.rb" />
+        <option value="$PROJECT_DIR$/MailMerger/Gemfile" />
       </list>
     </option>
   </component>
@@ -209,7 +208,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55740000" />
+    <option name="totallyTimeSpent" value="56011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -506,13 +505,6 @@
     <entry file="file://$PROJECT_DIR$/MailMerger/spec/chopper_spec.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/model/etiquetas.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -524,13 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="126" column="29" lean-forward="true" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/app.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -555,6 +540,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
