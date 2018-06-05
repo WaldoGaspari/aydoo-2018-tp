@@ -11,7 +11,7 @@ class Etiquetas_spec
 
       texto = aplicador.aplicarFecha(texto)
 
-      expect(texto).to eq " asf 4-6-2018 aomimv "
+      expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv "
     end
 
     it 'aplico etiqueta inversa' do
@@ -20,7 +20,7 @@ class Etiquetas_spec
 
       texto = aplicador.aplicarFecha(texto)
 
-      expect(texto).to eq " asf 2018-6-4 aomimv "
+      expect(texto).to eq " asf #{Date.today.year}-#{Date.today.month}-#{Date.today.day} aomimv "
     end
   end
   describe 'etiqueta empty' do

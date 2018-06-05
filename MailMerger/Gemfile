@@ -7,6 +7,7 @@ gem 'rake'
 gem 'guard'
 gem 'guard-rspec'
 gem 'rb-readline'
+gem 'mail'
 
 gem 'sinatra'
 gem 'sinatra-contrib'

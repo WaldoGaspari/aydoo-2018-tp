@@ -25,7 +25,10 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     lumberjack (1.0.9)
+    mail (2.7.0)
+      mini_mime (>= 0.1.1)
     method_source (0.8.2)
+    mini_mime (1.0.0)
     multi_json (1.13.1)
     nenv (0.2.0)
     notiffany (0.0.7)
@@ -76,6 +79,7 @@ DEPENDENCIES
   byebug
   guard
   guard-rspec
+  mail
   rack-test
   rake
   rb-readline
