@@ -3,11 +3,7 @@ require_relative '../model/envio_de_mails'
 
 class Merger
 
-  def initialize
-    @envio = EnvioDeMails.new
-  end
-
-  def enviarMails(json)
+  def enviarMails(json,enviador_de_mails)
     json_a_usar = json.to_json
     json_parseado = JSON.parse(json_a_usar)
     destinatario = json_parseado['contactos']
@@ -22,8 +18,7 @@ class Merger
       cuerpoMail = @mensajeConDatos
       cuerpoMail = self.llenarPlantilla(cuerpoMail,destinatarioIterado)
       cuerpoMail = etiquetas.aplicar_todas(cuerpoMail,json_parseado)
-      @envio.enviar(datos['remitente'].to_s, destinatarioIterado['mail'].to_s, datos['asunto'].to_s, cuerpoMail)
-      puts cuerpoMail
+      enviador_de_mails.enviar(datos['remitente'].to_s, destinatarioIterado['mail'].to_s, datos['asunto'].to_s, cuerpoMail)
      end
 
   end

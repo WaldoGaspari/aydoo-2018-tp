@@ -14,7 +14,7 @@ class Etiquetas
   end
 
 
-  def aplicarEmpty(cadena, jsonEntrada)
+  def aplicarEmpty(cadena, json_entrada)
     if (cadena.include?  "<empty(")
       indice_empty = cadena.index('<empty(')
       campo_buscado = ""
@@ -32,7 +32,7 @@ class Etiquetas
       indice_string = indice_string + 1
 
 
-      json = jsonEntrada.to_json
+      json = json_entrada.to_json
       jsonParseado = JSON.parse(json)
 
       if jsonParseado['datos'][campo_buscado].nil?
