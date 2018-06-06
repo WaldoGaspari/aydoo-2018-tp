@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative '../model/envio_de_mails'
+require_relative '../model/fake_envio_de_mails'
 require 'json'
 
 describe 'enviar mails' do
@@ -9,7 +10,7 @@ describe 'enviar mails' do
 
 
   it 'se envia un mail dando los parametros' do
-    mail = Fake_envio_de_mails.new
+    mail = Fake_EnvioDeMails.new
     mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
 
     expect(mail.mails_enviados[0]["remitente"]).to eq "remitente@test.com"
@@ -19,7 +20,7 @@ describe 'enviar mails' do
   end
 
   it 'se envian 2 mails dando los parametros' do
-    mail = Fake_envio_de_mails.new
+    mail = Fake_EnvioDeMails.new
     mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
     mail.enviar('carlos@test.com', 'mabel@test.com', 'test', 'hola')
 
@@ -35,19 +36,3 @@ describe 'enviar mails' do
 
 end
 
-
-class Fake_envio_de_mails
-
-  def initialize
-    @mails_enviados = Array.new
-    @cantidad_mails = 0
-  end
-  attr_accessor :mails_enviados, :cantidad_mails
-
-  def enviar(remitente, destinatario, asunto, cuerpo_del_mensaje)
-    @mails_enviados[@cantidad_mails] = Hash.new
-    @mails_enviados[@cantidad_mails] = {"remitente"=>remitente, "destinatario"=>destinatario, "asunto"=>asunto, "cuerpo_del_mensaje"=>cuerpo_del_mensaje}
-    @cantidad_mails += 1
-  end
-
-end

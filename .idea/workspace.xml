@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cc0a2f7-2416-429f-a7f9-3929cd961c87" name="Default" comment="" />
+    <list default="true" id="9cc0a2f7-2416-429f-a7f9-3929cd961c87" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/MailMerger/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,10 +16,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MailMerger/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state>
+              <caret selection-end-line="18" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -29,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rakefile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Rakefile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rakefile">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -39,38 +52,38 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="envio_de_mails_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="merger_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailMerger/spec/merger_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="497">
+              <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="envio_de_mails.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MailMerger/model/envio_de_mails.rb">
+      <file leaf-file-name="etiquetas_spec.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="432">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MailMerger/app.rb">
+      <file leaf-file-name="envio_de_mails_spec.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            <state relative-caret-position="204">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fake_envio_de_mails.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MailMerger/model/fake_envio_de_mails.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="38" selection-start-column="38" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -84,22 +97,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="etiquetas_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2142">
-              <caret line="126" column="29" lean-forward="true" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Ruby Class Template" />
         <option value="Test-Spec Template" />
+        <option value="Ruby Class Template" />
       </list>
     </option>
   </component>
@@ -118,13 +122,14 @@
         <option value="$PROJECT_DIR$/MailMerger/spec/chopper_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/model/envio_de_mails.rb" />
         <option value="$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb" />
-        <option value="$PROJECT_DIR$/MailMerger/Gemfile" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/MailMerger/model/etiquetas.rb" />
-        <option value="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/app.rb" />
-        <option value="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/model/merger.rb" />
+        <option value="$PROJECT_DIR$/MailMerger/Gemfile" />
+        <option value="$PROJECT_DIR$/MailMerger/model/fake_envio_de_mails.rb" />
+        <option value="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" />
+        <option value="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" />
       </list>
     </option>
   </component>
@@ -219,7 +224,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66240000" />
+    <option name="totallyTimeSpent" value="67393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -265,9 +270,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MailMerger/spec/chopper_spec.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/model/merger.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
@@ -499,45 +501,10 @@
     <entry file="file://$PROJECT_DIR$/MailMerger/spec/chopper_spec.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/app.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="126" column="29" lean-forward="true" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/spec/merger_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
@@ -567,6 +534,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/model/fake_envio_de_mails.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/spec/merger_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
