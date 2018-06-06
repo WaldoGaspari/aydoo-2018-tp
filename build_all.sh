@@ -3,10 +3,11 @@
 set -e
 
 for dir in */ ; do
-  echo "Procesando directorio: $dir"
   cd $dir
-  echo "En directorio `pwd`"
-  bundle install
-  bundle exec rake
+  if [ -f Rakefile ]
+  then
+    bundle install
+    bundle exec rake
+  fi
   cd ..
 done
