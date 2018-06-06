@@ -1,10 +1,12 @@
 require 'rspec'
 require_relative '../model/merger'
+require_relative '../model/fake_envio_de_mails'
 require 'json'
 
 describe 'enviar mails a traves de un JSON' do
 
   let(:merger) { Merger.new }
+  let(:mail) { Fake_EnvioDeMails.new }
 
   json = {
       "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>, el día <fecha_del_evento>. Por favor confirmar su participación enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
@@ -31,7 +33,6 @@ describe 'enviar mails a traves de un JSON' do
   }
 
   it 'al recibir un JSON y un mail no falla' do
-    mail = Fake_EnvioDeMails.new
     expect(merger.enviarMails(json,mail)).to be_truthy
   end
 
@@ -45,7 +46,6 @@ describe 'enviar mails a traves de un JSON' do
   end
 
   it 'al recibir un JSON y envia los mails' do
-    mail = Fake_EnvioDeMails.new
     expect(merger.enviarMails(json,mail)).to be_truthy
     expect(mail.mails_enviados[0]["remitente"]).to eq "universidad@untref.com"
     expect(mail.mails_enviados[0]["destinatario"]).to eq "juanperez@test.com"

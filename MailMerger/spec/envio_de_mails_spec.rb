@@ -5,12 +5,11 @@ require 'json'
 
 describe 'enviar mails' do
 
-  let(:envio) { EnvioDeMails.new }
+  let(:mail) { Fake_EnvioDeMails.new }
 
 
 
   it 'se envia un mail dando los parametros' do
-    mail = Fake_EnvioDeMails.new
     mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
 
     expect(mail.mails_enviados[0]["remitente"]).to eq "remitente@test.com"
@@ -20,7 +19,6 @@ describe 'enviar mails' do
   end
 
   it 'se envian 2 mails dando los parametros' do
-    mail = Fake_EnvioDeMails.new
     mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
     mail.enviar('carlos@test.com', 'mabel@test.com', 'test', 'hola')
 
