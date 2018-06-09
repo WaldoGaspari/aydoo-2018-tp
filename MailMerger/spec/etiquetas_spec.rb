@@ -7,18 +7,18 @@ class Etiquetas_spec
 
     it 'aplico etiqueta directa' do
       texto = " asf <date:d> aomimv "
-      aplicador = Etiquetas.new
+      aplicador = Etiqueta_fecha.new
 
-      texto = aplicador.aplicar_fecha(texto)
+      texto = aplicador.aplicar_fechas(texto)
 
       expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv "
     end
 
     it 'aplico etiqueta inversa' do
       texto = " asf <date:i> aomimv "
-      aplicador = Etiquetas.new
+      aplicador = Etiqueta_fecha.new
 
-      texto = aplicador.aplicar_fecha(texto)
+      texto = aplicador.aplicar_fechas(texto)
 
       expect(texto).to eq " asf #{Date.today.year}-#{Date.today.month}-#{Date.today.day} aomimv "
     end
@@ -52,7 +52,7 @@ class Etiquetas_spec
       }
       }
 
-      aplicador = Etiquetas.new
+      aplicador = Etiqueta_empty.new
 
       texto = aplicador.aplicar_empty(texto, js)
 
@@ -85,7 +85,7 @@ class Etiquetas_spec
       }
       js.to_json
 
-      aplicador = Etiquetas.new
+      aplicador = Etiqueta_empty.new
 
       texto = aplicador.aplicar_empty(texto, js)
 
@@ -98,7 +98,7 @@ class Etiquetas_spec
 
     it 'aplico suma' do
       texto = " asf <sum(17,23)>:asdvgev aomimv "
-      aplicador = Etiquetas.new
+      aplicador = Etiqueta_suma.new
 
       texto = aplicador.aplicar_suma(texto)
 
@@ -107,7 +107,7 @@ class Etiquetas_spec
 
     it 'aplico suma y no hay suma' do
       texto = " asf <sm(17,23)>:asdvgev aomimv "
-      aplicador = Etiquetas.new
+      aplicador = Etiqueta_suma.new
 
       texto = aplicador.aplicar_suma(texto)
 
@@ -146,7 +146,7 @@ class Etiquetas_spec
 
       aplicador = Etiquetas.new
 
-      texto = aplicador.aplicar_todas(texto,js)
+      texto = aplicador.aplicar(texto, js)
 
       expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv asf italia aomimv #{Date.today.year}-#{Date.today.month}-#{Date.today.day} suma 30 deberia ser 30"
     end

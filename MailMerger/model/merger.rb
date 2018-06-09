@@ -17,7 +17,7 @@ class Merger
     destinatario.each do |destinatario_iterado|
       cuerpo_mail = @mensaje_con_datos
       cuerpo_mail = self.llenar_plantilla(cuerpo_mail, destinatario_iterado)
-      cuerpo_mail = etiquetas.aplicar_todas(cuerpo_mail,json_parseado)
+      cuerpo_mail = etiquetas.aplicar(cuerpo_mail, json_parseado)
       enviador_de_mails.enviar(datos['remitente'].to_s, destinatario_iterado['mail'].to_s, datos['asunto'].to_s, cuerpo_mail)
      end
 
