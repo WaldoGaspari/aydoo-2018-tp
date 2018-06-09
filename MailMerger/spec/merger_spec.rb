@@ -32,6 +32,34 @@ describe 'enviar mails a traves de un JSON' do
       }
   }
 
+  json_sin_contactos = {
+      "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>, el día <fecha_del_evento>. Por favor confirmar su participación enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
+      "datos":{
+          "remitente": "universidad@untref.com",
+          "asunto":"Invitación a fiesta de fin de año",
+          "nombre_evento":"la cena de fin de año de la UNTREF",
+          "lugar_evento":"el Centro de estudios (avenida Directorio 887, Caseros)",
+          "fecha_del_evento":"5 de diciembre",
+          "Mail_de_confirmacion":"fiesta@untref.com"
+      }
+  }
+
+  json_sin_datos = {
+      "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>, el día <fecha_del_evento>. Por favor confirmar su participación enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
+      "contactos":[
+          {
+              "nombre":"juan",
+              "apellido":"perez",
+              "mail":"juanperez@test.com"
+          },
+          {
+              "nombre":"maria",
+              "apellido":"gonzalez",
+              "mail":"mariagonzalez@test.com"
+          }
+      ]
+  }
+
   it 'al recibir un JSON y un mail no falla' do
     expect(merger.enviar_mails(json, mail)).to be_truthy
   end
@@ -55,6 +83,14 @@ describe 'enviar mails a traves de un JSON' do
     expect(mail.mails_enviados[1]["destinatario"]).to eq "mariagonzalez@test.com"
     expect(mail.mails_enviados[1]["asunto"]).to eq "Invitación a fiesta de fin de año"
     expect(mail.mails_enviados[1]["cuerpo_del_mensaje"]).to eq "Hola maria,\n\r Por medio del presente mail te estamos invitando a la cena de fin de año de la UNTREF, que se desarrollará en el Centro de estudios (avenida Directorio 887, Caseros), el día 5 de diciembre. Por favor confirmar su participación enviando un mail a fiesta@untref.com.\n\rSin otro particular.La direccion"
+  end
+
+  it 'al NO recibir una lista de contactos NO deberia enviar ningun mail y deberia lanzar una excepcion' do
+    expect { expect { merger.enviar_mails(json_sin_contactos, mail) }.to raise_error ArgumentError, 'No posee una lista de candidatos.'}
+  end
+
+  it 'al NO recibir los datos para enviar los mails deberia lanzar una excepcion' do
+    expect { expect { merger.enviar_mails(json_sin_datos, mail) }.to raise_error ArgumentError, 'No posee los datos para armar los mails.'}
   end
 
 end

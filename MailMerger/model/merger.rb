@@ -1,14 +1,23 @@
 require 'json'
 require_relative '../model/envio_de_mails'
+require_relative '../model/etiquetas'
 
 class Merger
 
   def enviar_mails(json, enviador_de_mails)
     json_a_usar = json.to_json
     json_parseado = JSON.parse(json_a_usar)
+
+    if (json_parseado['contactos'].nil?)
+      raise ArgumentError.new('No posee una lista de contactos.')
+    end
+
+    if (json_parseado['datos'].nil?)
+      raise ArgumentError.new('No posee los datos para armar los mails.')
+    end
+
     destinatario = json_parseado['contactos']
     datos = json_parseado['datos']
-
     @mensaje_con_datos = json_parseado['template']
     @mensaje_con_datos = self.llenar_plantilla(@mensaje_con_datos, datos)
 

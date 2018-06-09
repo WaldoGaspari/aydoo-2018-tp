@@ -1,6 +1,5 @@
 class Fake_EnvioDeMails < EnvioDeMails
 
-
     def initialize
       @mails_enviados = Array.new
       @cantidad_de_mails = 0
