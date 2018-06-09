@@ -3,7 +3,7 @@ require 'json'
 
 class Etiquetas
 
-  def aplicarFecha(cadena)
+  def aplicar_fecha(cadena)
     fecha = Date.today
     fecha_directa = fecha.day.to_s + "-" + fecha.month.to_s + "-" + fecha.year.to_s
     cadena = cadena.gsub("<date:d>", fecha_directa)
@@ -13,8 +13,7 @@ class Etiquetas
     cadena
   end
 
-
-  def aplicarEmpty(cadena, json_entrada)
+  def aplicar_empty(cadena, json_entrada)
     if (cadena.include?  "<empty(")
       indice_empty = cadena.index('<empty(')
       campo_buscado = ""
@@ -31,46 +30,45 @@ class Etiquetas
       end
       indice_string = indice_string + 1
 
-
       json = json_entrada.to_json
-      jsonParseado = JSON.parse(json)
+      json_parseado = JSON.parse(json)
 
-      if jsonParseado['datos'][campo_buscado].nil?
-        aReemplazar = cadena[indice_empty..indice_string]
-        cadena = cadena.gsub(aReemplazar, campo_por_reemplazar)
+      if json_parseado['datos'][campo_buscado].nil?
+        campo_a_reemplazar = cadena[indice_empty..indice_string]
+        cadena = cadena.gsub(campo_a_reemplazar, campo_por_reemplazar)
       end
     end
     cadena
   end
 
-  def aplicarSuma(cadena)
+  def aplicar_suma(cadena)
     if (cadena.include?  "<sum(")
-      indiceSuma = cadena.index('<sum(')
-      primerNro = ""
-      segundoNro = ""
-      indice = indiceSuma + 5
+      indice_suma = cadena.index('<sum(')
+      primer_numero = ""
+      segundo_numero = ""
+      indice = indice_suma + 5
       while cadena[indice] != ',' do
-        primerNro = primerNro + cadena[indice]
+        primer_numero = primer_numero + cadena[indice]
         indice = indice + 1
       end
       indice = indice + 1
       while cadena[indice] != ')' do
-        segundoNro = segundoNro + cadena[indice]
+        segundo_numero = segundo_numero + cadena[indice]
         indice = indice + 1
       end
       indice = indice + 1
 
-      suma = primerNro.to_i + segundoNro.to_i
-      aReemplazar = cadena[indiceSuma..indice]
-      cadena = cadena.gsub(aReemplazar, suma.to_s)
+      suma = primer_numero.to_i + segundo_numero.to_i
+      campo_a_reemplazar = cadena[indice_suma..indice]
+      cadena = cadena.gsub(campo_a_reemplazar, suma.to_s)
     end
     cadena
   end
 
   def aplicar_todas(cadena, json)
-    cadena = self.aplicarFecha(cadena)
-    cadena = self.aplicarEmpty(cadena,json)
-    cadena = self.aplicarSuma(cadena)
+    cadena = self.aplicar_fecha(cadena)
+    cadena = self.aplicar_empty(cadena, json)
+    cadena = self.aplicar_suma(cadena)
     cadena
   end
   

@@ -33,20 +33,20 @@ describe 'enviar mails a traves de un JSON' do
   }
 
   it 'al recibir un JSON y un mail no falla' do
-    expect(merger.enviarMails(json,mail)).to be_truthy
+    expect(merger.enviar_mails(json, mail)).to be_truthy
   end
 
   it 'llenar plantilla devuelve el formulario lleno' do
     entregado = "Hola <nombre>, te estamos invitando a mi <nombre_evento>"
     datosEntregados = {
-        "nombre": "nigga",
-        "nombre_evento":"cumpleañito",
+        "nombre": "Lucas",
+        "nombre_evento":"cumpleaños",
     }
-    expect(merger.llenarPlantilla(entregado, datosEntregados)).to eq "Hola nigga, te estamos invitando a mi cumpleañito"
+    expect(merger.llenar_plantilla(entregado, datosEntregados)).to eq "Hola Lucas, te estamos invitando a mi cumpleaños"
   end
 
-  it 'al recibir un JSON y envia los mails' do
-    expect(merger.enviarMails(json,mail)).to be_truthy
+  it 'al recibir un JSON envia los mails' do
+    expect(merger.enviar_mails(json, mail)).to be_truthy
     expect(mail.mails_enviados[0]["remitente"]).to eq "universidad@untref.com"
     expect(mail.mails_enviados[0]["destinatario"]).to eq "juanperez@test.com"
     expect(mail.mails_enviados[0]["asunto"]).to eq "Invitación a fiesta de fin de año"

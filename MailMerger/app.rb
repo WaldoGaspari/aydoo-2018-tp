@@ -13,6 +13,6 @@ post '/' do
   json_parseado = JSON.parse(request.body.read)
   merger = Merger.new
   enviador_mails = EnvioDeMails.new
-  merger.enviarMails(json_parseado,enviador_mails)
+  merger.enviar_mails(json_parseado, enviador_mails)
   json({ "Resultado": "OK"})
 end

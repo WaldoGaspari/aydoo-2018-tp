@@ -9,7 +9,7 @@ class Etiquetas_spec
       texto = " asf <date:d> aomimv "
       aplicador = Etiquetas.new
 
-      texto = aplicador.aplicarFecha(texto)
+      texto = aplicador.aplicar_fecha(texto)
 
       expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv "
     end
@@ -18,11 +18,12 @@ class Etiquetas_spec
       texto = " asf <date:i> aomimv "
       aplicador = Etiquetas.new
 
-      texto = aplicador.aplicarFecha(texto)
+      texto = aplicador.aplicar_fecha(texto)
 
       expect(texto).to eq " asf #{Date.today.year}-#{Date.today.month}-#{Date.today.day} aomimv "
     end
   end
+
   describe 'etiqueta empty' do
 
     it 'aplico etiqueta y empty existe' do
@@ -53,14 +54,13 @@ class Etiquetas_spec
 
       aplicador = Etiquetas.new
 
-      texto = aplicador.aplicarEmpty(texto,js)
+      texto = aplicador.aplicar_empty(texto, js)
 
       expect(texto).to eq " asf <empty(pais,argentina)> aomimv "
     end
 
     it 'aplico etiqueta y empty NO existe' do
       texto = " asf <empty(pais,argentina)> aomimv "
-      #js = JSON.generate
       js = {
           "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollarÃ¡ en <lugar_del_evento>, el dÃ­a <fecha_del_evento>. Por favor confirmar su participaciÃ³n enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
           "contactos":[
@@ -87,19 +87,20 @@ class Etiquetas_spec
 
       aplicador = Etiquetas.new
 
-      texto = aplicador.aplicarEmpty(texto,js)
+      texto = aplicador.aplicar_empty(texto, js)
 
       expect(texto).to eq " asf argentina aomimv "
     end
 
   end
+
   describe 'etiqueta suma' do
 
     it 'aplico suma' do
       texto = " asf <sum(17,23)>:asdvgev aomimv "
       aplicador = Etiquetas.new
 
-      texto = aplicador.aplicarSuma(texto)
+      texto = aplicador.aplicar_suma(texto)
 
       expect(texto).to eq " asf 40:asdvgev aomimv "
     end
@@ -108,7 +109,7 @@ class Etiquetas_spec
       texto = " asf <sm(17,23)>:asdvgev aomimv "
       aplicador = Etiquetas.new
 
-      texto = aplicador.aplicarSuma(texto)
+      texto = aplicador.aplicar_suma(texto)
 
       expect(texto).to eq " asf <sm(17,23)>:asdvgev aomimv "
     end
@@ -149,7 +150,5 @@ class Etiquetas_spec
 
       expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv asf italia aomimv #{Date.today.year}-#{Date.today.month}-#{Date.today.day} suma 30 deberia ser 30"
     end
-
-
   end
 end

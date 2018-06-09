@@ -3,27 +3,27 @@ require_relative '../model/envio_de_mails'
 
 class Merger
 
-  def enviarMails(json,enviador_de_mails)
+  def enviar_mails(json, enviador_de_mails)
     json_a_usar = json.to_json
     json_parseado = JSON.parse(json_a_usar)
     destinatario = json_parseado['contactos']
     datos = json_parseado['datos']
 
-    @mensajeConDatos = json_parseado['template']
-    @mensajeConDatos = self.llenarPlantilla(@mensajeConDatos,datos)
+    @mensaje_con_datos = json_parseado['template']
+    @mensaje_con_datos = self.llenar_plantilla(@mensaje_con_datos, datos)
 
     etiquetas = Etiquetas.new
 
-    destinatario.each do |destinatarioIterado|
-      cuerpoMail = @mensajeConDatos
-      cuerpoMail = self.llenarPlantilla(cuerpoMail,destinatarioIterado)
-      cuerpoMail = etiquetas.aplicar_todas(cuerpoMail,json_parseado)
-      enviador_de_mails.enviar(datos['remitente'].to_s, destinatarioIterado['mail'].to_s, datos['asunto'].to_s, cuerpoMail)
+    destinatario.each do |destinatario_iterado|
+      cuerpo_mail = @mensaje_con_datos
+      cuerpo_mail = self.llenar_plantilla(cuerpo_mail, destinatario_iterado)
+      cuerpo_mail = etiquetas.aplicar_todas(cuerpo_mail,json_parseado)
+      enviador_de_mails.enviar(datos['remitente'].to_s, destinatario_iterado['mail'].to_s, datos['asunto'].to_s, cuerpo_mail)
      end
 
   end
 
-  def llenarPlantilla(cadena, json)
+  def llenar_plantilla(cadena, json)
     cadena_devuelta = cadena
     json.each do |dato|
       reemplazar = "<" + dato[0].to_s + ">"
