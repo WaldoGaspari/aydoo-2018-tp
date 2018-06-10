@@ -60,6 +60,29 @@ describe 'enviar mails a traves de un JSON' do
       ]
   }
 
+  json_sin_template = {
+      "contactos":[
+          {
+              "nombre":"juan",
+              "apellido":"perez",
+              "mail":"juanperez@test.com"
+          },
+          {
+              "nombre":"maria",
+              "apellido":"gonzalez",
+              "mail":"mariagonzalez@test.com"
+          }
+      ],
+      "datos":{
+          "remitente": "universidad@untref.com",
+          "asunto":"Invitación a fiesta de fin de año",
+          "nombre_evento":"la cena de fin de año de la UNTREF",
+          "lugar_del_evento":"el Centro de estudios (avenida Directorio 887, Caseros)",
+          "fecha_del_evento":"5 de diciembre",
+          "mail_de_confirmacion":"fiesta@untref.com"
+      }
+  }
+
   it 'al recibir un JSON y un mail no falla' do
     expect(merger.enviar_mails(json, mail)).to be_truthy
   end
@@ -91,6 +114,10 @@ describe 'enviar mails a traves de un JSON' do
 
   it 'al NO recibir los datos para enviar los mails deberia lanzar una excepcion' do
     expect { expect { merger.enviar_mails(json_sin_datos, mail) }.to raise_error ArgumentError, 'No posee los datos para armar los mails.'}
+  end
+
+  it 'al NO recibir la plantilla para enviar los mails deberia lanzar una excepcion' do
+    expect { expect { merger.enviar_mails(json_sin_template, mail) }.to raise_error ArgumentError, 'No posee plantilla para armar los mails correspondientes.'}
   end
 
   it 'se llama al metodo enviar del mail' do

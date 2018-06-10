@@ -16,6 +16,10 @@ class Merger
       raise ArgumentError.new('No posee los datos para armar los mails.')
     end
 
+    if (json_parseado['template'].nil?)
+      raise ArgumentError.new('No posee plantilla para armar los mails correspondientes.')
+    end
+
     destinatario = json_parseado['contactos']
     datos = json_parseado['datos']
     @mensaje_con_datos = json_parseado['template']

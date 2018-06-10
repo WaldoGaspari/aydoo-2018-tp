@@ -7,8 +7,6 @@ describe 'enviar mails' do
 
   let(:mail) { Fake_EnvioDeMails.new }
 
-
-
   it 'se envia un mail dando los parametros' do
     mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
 
@@ -32,7 +30,7 @@ describe 'enviar mails' do
     expect(mail.mails_enviados[1]["cuerpo_del_mensaje"]).to eq "hola"
   end
 
-  it 'se manda mail dando los parametros' do
+  it 'se manda mail dando los parametros utilizando double' do
     mandador_mail = double(EnvioDeMails.new)
     expect(mandador_mail).to receive(:enviar).with('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
     mandador_mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
