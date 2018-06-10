@@ -3,7 +3,7 @@ require_relative '../model/etiquetas'
 require 'json'
 
 class Etiquetas_spec
-  describe 'etiqueta dia' do
+  describe 'etiqueta date' do
 
     it 'aplico etiqueta directa' do
       texto = " asf <date:d> aomimv "
@@ -119,14 +119,14 @@ class Etiquetas_spec
   describe 'todas las etiquetas' do
 
     it 'aplico etiqueta y empty NO existe' do
-      texto = " asf <date:d> aomimv asf <empty(pais,italia)> aomimv <date:i> suma <sum(19,11)> deberia ser 30"
+      texto = " asf <date:d> aomimv asf <empty(pais,italia)> aomimv <date:i> suma <sum(19,11)> deberia ser 30 asf <time> aomimv "
       js = {
           "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollarÃ¡ en <lugar_del_evento>, el dÃ­a <fecha_del_evento>. Por favor confirmar su participaciÃ³n enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
           "contactos":[
               {
               "nombre":"juan",
-          "apellido":"perez",
-          "mail":"juanperez@test.com"
+              "apellido":"perez",
+              "mail":"juanperez@test.com"
       },
           {
               "nombre":"maria",
@@ -148,7 +148,20 @@ class Etiquetas_spec
 
       texto = aplicador.aplicar(texto, js)
 
-      expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv asf italia aomimv #{Date.today.year}-#{Date.today.month}-#{Date.today.day} suma 30 deberia ser 30"
+      expect(texto).to eq " asf #{Date.today.day}-#{Date.today.month}-#{Date.today.year} aomimv asf italia aomimv #{Date.today.year}-#{Date.today.month}-#{Date.today.day} suma 30 deberia ser 30 asf #{Time.now.hour}:#{Time.now.min} aomimv "
     end
+  end
+
+  describe 'etiqueta time' do
+
+    it 'aplico etiqueta en formato 24hs' do
+      texto = " asf <time> aomimv "
+      aplicador = Etiqueta_time.new
+
+      texto = aplicador.aplicar_time(texto)
+
+      expect(texto).to eq " asf #{Time.now.hour}:#{Time.now.min} aomimv "
+    end
+
   end
 end

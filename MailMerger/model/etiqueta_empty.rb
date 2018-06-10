@@ -1,10 +1,14 @@
-require_relative '../model/etiquetas'
+require_relative '../model/etiqueta_time'
 
 class Etiqueta_empty
 
+  def initialize
+    @siguiente_funcion_etiqueta = Etiqueta_time.new
+  end
+
   def aplicar(cadena,json_entrada)
     cadena = aplicar_empty(cadena,json_entrada)
-    cadena
+    @siguiente_funcion_etiqueta.aplicar(cadena, json_entrada)
   end
 
   def aplicar_empty(cadena, json_entrada)
