@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc0a2f7-2416-429f-a7f9-3929cd961c87" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailMerger/model/etiqueta_empty.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/model/etiqueta_empty.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailMerger/model/etiqueta_time.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/model/etiqueta_time.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,20 +55,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="etiqueta_time.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="etiqueta_time.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailMerger/model/etiqueta_time.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="etiquetas_spec.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="etiquetas_spec.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1965">
-              <caret line="131" column="31" lean-forward="true" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+            <state relative-caret-position="548">
+              <caret line="175" column="3" lean-forward="true" selection-start-line="175" selection-start-column="3" selection-end-line="175" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -109,8 +108,8 @@
         <option value="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/model/merger.rb" />
         <option value="$PROJECT_DIR$/MailMerger/model/etiqueta_empty.rb" />
-        <option value="$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/model/etiqueta_time.rb" />
+        <option value="$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb" />
       </list>
     </option>
   </component>
@@ -205,12 +204,12 @@
       <workItem from="1528499912289" duration="2617000" />
       <workItem from="1528556001843" duration="2882000" />
       <workItem from="1528565442308" duration="7385000" />
-      <workItem from="1528581290849" duration="5194000" />
+      <workItem from="1528581290849" duration="7768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91112000" />
+    <option name="totallyTimeSpent" value="93686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -497,20 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/model/etiqueta_empty.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="61" lean-forward="true" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="131" column="31" lean-forward="true" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/spec/merger_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-385">
@@ -528,10 +513,24 @@
     <entry file="file://$PROJECT_DIR$/MailMerger/model/etiqueta_suma.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/model/etiqueta_empty.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="61" lean-forward="true" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/model/etiqueta_time.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="175" column="3" lean-forward="true" selection-start-line="175" selection-start-column="3" selection-end-line="175" selection-end-column="3" />
         </state>
       </provider>
     </entry>

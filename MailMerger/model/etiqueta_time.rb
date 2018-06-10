@@ -9,9 +9,13 @@ class Etiqueta_time
 
   def aplicar_time (cadena)
     if (cadena.include? "<time>")
-      hora = Time.now
-      hora_formato_24 = hora.hour.to_s + ":" + hora.min.to_s
-      cadena = cadena.gsub('<time>', hora_formato_24)
+      hora = Time.now.strftime("%H-%M")
+      cadena = cadena.gsub('<time>', hora)
+    end
+
+    if (cadena.include? "<time:12>")
+      hora = Time.now.strftime("%l-%M")
+      cadena = cadena.gsub('<time:12>', hora)
     end
     cadena
   end
