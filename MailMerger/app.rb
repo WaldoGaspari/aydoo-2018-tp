@@ -19,10 +19,9 @@ post '/' do
   begin
     analizador_de_json.analizar_json_de_entrada(json_parseado)
   rescue
-    halt 400, json({ error: "Datos incorrectos"})
+    halt 500, json({ "resultado": "error, entrada incorrecta"})
   end
 
   merger.enviar_mails(json_parseado, enviador_mails)
-  json({ "Resultado": "OK"})
-
+  json({ "resultado": "ok"})
 end
