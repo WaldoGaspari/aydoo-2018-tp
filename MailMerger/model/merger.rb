@@ -7,19 +7,6 @@ class Merger
   def enviar_mails(json, enviador_de_mails)
     json_a_usar = json.to_json
     json_parseado = JSON.parse(json_a_usar)
-
-    if (json_parseado['contactos'].nil?)
-      raise ArgumentError.new('No posee una lista de contactos.')
-    end
-
-    if (json_parseado['datos'].nil?)
-      raise ArgumentError.new('No posee los datos para armar los mails.')
-    end
-
-    if (json_parseado['template'].nil?)
-      raise ArgumentError.new('No posee plantilla para armar los mails correspondientes.')
-    end
-
     destinatario = json_parseado['contactos']
     datos = json_parseado['datos']
     @mensaje_con_datos = json_parseado['template']
@@ -33,7 +20,6 @@ class Merger
       cuerpo_mail = etiquetas.aplicar(cuerpo_mail, json_parseado)
       enviador_de_mails.enviar(datos['remitente'].to_s, destinatario_iterado['mail'].to_s, datos['asunto'].to_s, cuerpo_mail)
      end
-
   end
 
   def llenar_plantilla(cadena, json)
@@ -44,5 +30,4 @@ class Merger
     end
     cadena_devuelta
   end
-
 end

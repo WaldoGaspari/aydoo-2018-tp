@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9cc0a2f7-2416-429f-a7f9-3929cd961c87" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailMerger/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/app.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailMerger/model/merger.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/model/merger.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="merger.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="merger.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailMerger/model/merger.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            <state relative-caret-position="480">
+              <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="json_de_entrada_exception.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MailMerger/model/json_de_entrada_exception.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -28,17 +37,17 @@
       <file leaf-file-name="etiquetas_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="429">
+              <caret line="172" column="7" lean-forward="true" selection-start-line="172" selection-start-column="7" selection-end-line="172" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MailMerger/app.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -46,8 +55,8 @@
       <file leaf-file-name="merger_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailMerger/spec/merger_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="102" column="40" lean-forward="true" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+            <state relative-caret-position="413">
+              <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -86,8 +95,9 @@
         <option value="$PROJECT_DIR$/MailMerger/model/etiqueta_time.rb" />
         <option value="$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb" />
         <option value="$PROJECT_DIR$/MailMerger/spec/envio_de_mails_spec.rb" />
-        <option value="$PROJECT_DIR$/MailMerger/model/merger.rb" />
+        <option value="$PROJECT_DIR$/MailMerger/model/json_de_entrada_exception.rb" />
         <option value="$PROJECT_DIR$/MailMerger/spec/merger_spec.rb" />
+        <option value="$PROJECT_DIR$/MailMerger/model/merger.rb" />
         <option value="$PROJECT_DIR$/MailMerger/app.rb" />
       </list>
     </option>
@@ -115,7 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -144,6 +153,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,12 +194,13 @@
       <workItem from="1528556001843" duration="2882000" />
       <workItem from="1528565442308" duration="7385000" />
       <workItem from="1528581290849" duration="7768000" />
-      <workItem from="1528653268881" duration="2298000" />
+      <workItem from="1528653268881" duration="3053000" />
+      <workItem from="1528657795345" duration="2429000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97726000" />
+    <option name="totallyTimeSpent" value="100910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -223,13 +234,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MailMerger/model/merger.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/Guardfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -492,29 +496,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/spec/merger_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="102" column="40" lean-forward="true" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailMerger/app.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="413">
+          <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MailMerger/model/merger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="480">
+          <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/spec/etiquetas_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="172" column="7" lean-forward="true" selection-start-line="172" selection-start-column="7" selection-end-line="172" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/model/json_de_entrada_exception.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailMerger/app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>

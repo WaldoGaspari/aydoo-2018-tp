@@ -7,6 +7,7 @@ describe 'enviar mails a traves de un JSON' do
 
   let(:merger) { Merger.new }
   let(:mail) { Fake_EnvioDeMails.new }
+  let(:analizador) { JsonDeEntradaException.new }
 
   json = {
       "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>, el día <fecha_del_evento>. Por favor confirmar su participación enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
@@ -109,15 +110,15 @@ describe 'enviar mails a traves de un JSON' do
   end
 
   it 'al NO recibir una lista de contactos NO deberia enviar ningun mail y deberia lanzar una excepcion' do
-    expect { expect { merger.enviar_mails(json_sin_contactos, mail) }.to raise_error ArgumentError, 'No posee una lista de candidatos.'}
+    expect { expect { analizador.analizar_json_de_entrada(json_sin_contactos) }.to raise_error ArgumentError, 'No posee una lista de candidatos.'}
   end
 
   it 'al NO recibir los datos para enviar los mails deberia lanzar una excepcion' do
-    expect { expect { merger.enviar_mails(json_sin_datos, mail) }.to raise_error ArgumentError, 'No posee los datos para armar los mails.'}
+    expect { expect { analizador.analizar_json_de_entrada(json_sin_datos) }.to raise_error ArgumentError, 'No posee los datos para armar los mails.'}
   end
 
   it 'al NO recibir la plantilla para enviar los mails deberia lanzar una excepcion' do
-    expect { expect { merger.enviar_mails(json_sin_template, mail) }.to raise_error ArgumentError, 'No posee plantilla para armar los mails correspondientes.'}
+    expect { expect { analizador.analizar_json_de_entrada(json_sin_template) }.to raise_error ArgumentError, 'No posee plantilla para armar los mails correspondientes.'}
   end
 
   it 'se llama al metodo enviar del mail' do
