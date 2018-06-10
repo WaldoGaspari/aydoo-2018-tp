@@ -16,8 +16,10 @@ post '/' do
   enviador_mails = EnvioDeMails.new
   analizador_de_json = JsonDeEntradaException.new
 
-  if (analizador_de_json.analizar_json_de_entrada(json_parseado))
-    status 400
+  begin
+    analizador_de_json.analizar_json_de_entrada(json_parseado)
+  rescue
+    halt 400, json({ error: "Datos incorrectos"})
   end
 
   merger.enviar_mails(json_parseado, enviador_mails)
