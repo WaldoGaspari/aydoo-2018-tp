@@ -32,5 +32,11 @@ describe 'enviar mails' do
     expect(mail.mails_enviados[1]["cuerpo_del_mensaje"]).to eq "hola"
   end
 
+  it 'se manda mail dando los parametros' do
+    mandador_mail = double(EnvioDeMails.new)
+    expect(mandador_mail).to receive(:enviar).with('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
+    mandador_mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')
+  end
+
 end
 

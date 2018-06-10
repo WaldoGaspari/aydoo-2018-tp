@@ -93,4 +93,11 @@ describe 'enviar mails a traves de un JSON' do
     expect { expect { merger.enviar_mails(json_sin_datos, mail) }.to raise_error ArgumentError, 'No posee los datos para armar los mails.'}
   end
 
+  it 'se llama al metodo enviar del mail' do
+    mandador_mail = double(EnvioDeMails.new)
+    expect(mandador_mail).to receive(:enviar)
+    expect(mandador_mail).to receive(:enviar)
+    expect(merger.enviar_mails(json, mandador_mail)).to be_truthy
+  end
+
 end
