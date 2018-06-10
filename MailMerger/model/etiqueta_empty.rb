@@ -31,9 +31,11 @@ class Etiqueta_empty
       json = json_entrada.to_json
       json_parseado = JSON.parse(json)
 
+      campo_a_reemplazar = cadena[indice_empty..indice_string]
       if json_parseado['datos'][campo_buscado].nil?
-        campo_a_reemplazar = cadena[indice_empty..indice_string]
         cadena = cadena.gsub(campo_a_reemplazar, campo_por_reemplazar)
+      else
+        cadena = cadena.gsub(campo_a_reemplazar, json_parseado['datos'][campo_buscado])
       end
     end
     cadena

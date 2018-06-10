@@ -56,7 +56,7 @@ class Etiquetas_spec
 
       texto = aplicador.aplicar_empty(texto, js)
 
-      expect(texto).to eq " asf <empty(pais,argentina)> aomimv "
+      expect(texto).to eq " asf uruguay aomimv "
     end
 
     it 'aplico etiqueta y empty NO existe' do
