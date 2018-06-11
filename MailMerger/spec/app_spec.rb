@@ -43,6 +43,7 @@ describe 'Tests app' do
   }
   }
   it 'deberia devolver una respuesta ok' do
+    EnvioDeMails.any_instance.stub(:enviar)
     jso = json_crudo.to_json
     post '/', jso , "Content-Type" => "application/json"
 
@@ -50,6 +51,7 @@ describe 'Tests app' do
   end
 
   it 'deberia devolver ok' do
+    EnvioDeMails.any_instance.stub(:enviar)
     jso = json_crudo.to_json
     post '/', jso , "Content-Type" => "application/json"
 
@@ -60,6 +62,7 @@ describe 'Tests app' do
   end
 
   it 'deberia devolver error, entrada incorrecta' do
+    EnvioDeMails.any_instance.stub(:enviar)
     jso = json_incorrecto.to_json
     post '/', jso , "Content-Type" => "application/json"
 
