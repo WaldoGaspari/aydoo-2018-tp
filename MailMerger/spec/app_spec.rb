@@ -9,7 +9,7 @@ describe 'Tests app' do
   def app
     Sinatra::Application
   end
-  json_crudo = {
+  json_entrada = {
       "template":"----------------------------------------------------------------Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>, el día <fecha_del_evento>. Por favor confirmar su participación enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
       "contactos":[
           {
@@ -44,7 +44,7 @@ describe 'Tests app' do
   }
   it 'deberia devolver una respuesta ok' do
     EnvioDeMails.any_instance.stub(:enviar)
-    jso = json_crudo.to_json
+    jso = json_entrada.to_json
     post '/', jso , "Content-Type" => "application/json"
 
     expect(last_response).to be_ok
@@ -52,7 +52,7 @@ describe 'Tests app' do
 
   it 'deberia devolver ok' do
     EnvioDeMails.any_instance.stub(:enviar)
-    jso = json_crudo.to_json
+    jso = json_entrada.to_json
     post '/', jso , "Content-Type" => "application/json"
 
     cuerpo_parseado = JSON.parse(last_response.body)

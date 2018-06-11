@@ -12,12 +12,10 @@ class Etiqueta_fecha
   end
 
   def aplicar_fechas(cadena)
-    fecha = Date.today
-    fecha_directa = fecha.day.to_s + "-" + fecha.month.to_s + "-" + fecha.year.to_s
+    fecha_directa = Date.today.strftime("%d-%m-%Y")
     cadena = cadena.gsub("<date:d>", fecha_directa)
-    fecha_inversa = fecha.year.to_s + "-" + fecha.month.to_s + "-" + fecha.day.to_s
+    fecha_inversa = Date.today.strftime("%Y-%m-%d")
     cadena = cadena.gsub("<date:i>", fecha_inversa)
     cadena
   end
-
 end
