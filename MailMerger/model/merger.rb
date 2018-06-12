@@ -7,9 +7,14 @@ class Merger
   def enviar_mails(json, enviador_de_mails)
     json_a_usar = json.to_json
     json_parseado = JSON.parse(json_a_usar)
+
+    analizador = JsonDeEntradaException.new
+    analizador.analizar_json_de_entrada(json_parseado)
+
     destinatario = json_parseado['contactos']
     datos = json_parseado['datos']
     @mensaje_con_datos = json_parseado['template']
+
     @mensaje_con_datos = self.llenar_plantilla(@mensaje_con_datos, datos)
 
     etiquetas = Etiquetas.new
@@ -31,3 +36,4 @@ class Merger
     cadena_devuelta
   end
 end
+
