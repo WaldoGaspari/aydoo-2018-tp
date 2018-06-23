@@ -148,7 +148,7 @@ class Etiquetas_spec
 
       texto = aplicador.aplicar(texto, js)
 
-      expect(texto).to eq " asf #{Date.today.strftime("%d-%m-%Y")} aomimv asf italia aomimv #{Date.today.strftime("%Y-%m-%d")} suma 30 deberia ser 30 asf #{Time.now.strftime("%H-%M")} aomimv "
+      expect(texto).to eq " asf #{Date.today.strftime("%d-%m-%Y")} aomimv asf italia aomimv #{Date.today.strftime("%Y-%m-%d")} suma 30 deberia ser 30 asf #{Time.now.strftime("%H:%M")} aomimv "
     end
   end
 
@@ -160,7 +160,7 @@ class Etiquetas_spec
 
       texto = aplicador.aplicar_time(texto)
 
-      expect(texto).to eq " asf #{Time.now.strftime("%H-%M")} aomimv "
+      expect(texto).to eq " asf #{Time.now.strftime("%H:%M")} aomimv "
     end
 
     it 'aplico etiqueta en formato 12hs' do
@@ -169,7 +169,7 @@ class Etiquetas_spec
 
       texto = aplicador.aplicar_time(texto)
 
-      expect(texto).to eq " asf #{Time.now.strftime("%l-%M")} aomimv "
+      expect(texto).to eq " asf #{Time.now.strftime("%l:%M")} pm aomimv "
     end
 
   end
