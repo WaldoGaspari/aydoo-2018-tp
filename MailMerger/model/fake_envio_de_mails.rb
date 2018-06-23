@@ -1,4 +1,4 @@
-class Fake_EnvioDeMails < EnvioDeMails
+class FakeEnvioDeMails < EnvioDeMails
 
     def initialize
       @mails_enviados = Array.new

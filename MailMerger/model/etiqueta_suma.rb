@@ -1,9 +1,9 @@
 require_relative '../../MailMerger/model/etiqueta_empty'
 
-class Etiqueta_suma
+class EtiquetaSuma
 
   def initialize
-    @siguiente_funcion_etiqueta = Etiqueta_empty.new
+    @siguiente_funcion_etiqueta = EtiquetaEmpty.new
   end
 
   def aplicar(cadena,json_entrada)

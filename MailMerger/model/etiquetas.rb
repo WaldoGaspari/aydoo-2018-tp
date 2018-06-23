@@ -5,7 +5,7 @@ require_relative '../model/etiqueta_fecha'
 class Etiquetas
 
   def initialize
-    @siguiente_funcion_etiqueta = Etiqueta_fecha.new
+    @siguiente_funcion_etiqueta = EtiquetaFecha.new
   end
 
   def aplicar(cadena, json_entrada)

@@ -5,7 +5,7 @@ require 'json'
 
 describe 'enviar mails' do
 
-  let(:mail) { Fake_EnvioDeMails.new }
+  let(:mail) { FakeEnvioDeMails.new }
 
   it 'se envia un mail dando los parametros' do
     mail.enviar('remitente@test.com', 'destinatario@test.com', 'Prueba', 'Mensaje de prueba')

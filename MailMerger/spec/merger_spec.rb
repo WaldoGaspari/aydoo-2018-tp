@@ -6,7 +6,7 @@ require 'json'
 describe 'enviar mails a traves de un JSON' do
 
   let(:merger) { Merger.new }
-  let(:mail) { Fake_EnvioDeMails.new }
+  let(:mail) { FakeEnvioDeMails.new }
   let(:analizador) { JsonDeEntradaException.new }
 
   json = {

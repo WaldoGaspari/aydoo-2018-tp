@@ -1,9 +1,9 @@
 require_relative '../model/etiqueta_suma'
 
-class Etiqueta_fecha
+class EtiquetaFecha
 
   def initialize
-    @siguiente_funcion_etiqueta = Etiqueta_suma.new
+    @siguiente_funcion_etiqueta = EtiquetaSuma.new
   end
 
   def aplicar(cadena,json_entrada)

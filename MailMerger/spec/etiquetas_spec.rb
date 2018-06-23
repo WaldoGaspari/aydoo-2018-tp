@@ -2,12 +2,12 @@ require 'rspec'
 require_relative '../model/etiquetas'
 require 'json'
 
-class Etiquetas_spec
+class EtiquetasSpec
   describe 'etiqueta date' do
 
     it 'aplico etiqueta directa' do
       texto = " asf <date:d> aomimv "
-      aplicador = Etiqueta_fecha.new
+      aplicador = EtiquetaFecha.new
 
       texto = aplicador.aplicar_fechas(texto)
 
@@ -16,7 +16,7 @@ class Etiquetas_spec
 
     it 'aplico etiqueta inversa' do
       texto = " asf <date:i> aomimv "
-      aplicador = Etiqueta_fecha.new
+      aplicador = EtiquetaFecha.new
 
       texto = aplicador.aplicar_fechas(texto)
 
@@ -52,7 +52,7 @@ class Etiquetas_spec
       }
       }
 
-      aplicador = Etiqueta_empty.new
+      aplicador = EtiquetaEmpty.new
 
       texto = aplicador.aplicar_empty(texto, js)
 
@@ -85,7 +85,7 @@ class Etiquetas_spec
       }
       js.to_json
 
-      aplicador = Etiqueta_empty.new
+      aplicador = EtiquetaEmpty.new
 
       texto = aplicador.aplicar_empty(texto, js)
 
@@ -98,7 +98,7 @@ class Etiquetas_spec
 
     it 'aplico suma' do
       texto = " asf <sum(17,23)>:asdvgev aomimv "
-      aplicador = Etiqueta_suma.new
+      aplicador = EtiquetaSuma.new
 
       texto = aplicador.aplicar_suma(texto)
 
@@ -107,7 +107,7 @@ class Etiquetas_spec
 
     it 'aplico suma y no hay suma' do
       texto = " asf <sm(17,23)>:asdvgev aomimv "
-      aplicador = Etiqueta_suma.new
+      aplicador = EtiquetaSuma.new
 
       texto = aplicador.aplicar_suma(texto)
 
@@ -156,7 +156,7 @@ class Etiquetas_spec
 
     it 'aplico etiqueta en formato 24hs' do
       texto = " asf <time> aomimv "
-      aplicador = Etiqueta_time.new
+      aplicador = EtiquetaTime.new
 
       texto = aplicador.aplicar_time(texto)
 
@@ -165,7 +165,7 @@ class Etiquetas_spec
 
     it 'aplico etiqueta en formato 12hs' do
       texto = " asf <time:12> aomimv "
-      aplicador = Etiqueta_time.new
+      aplicador = EtiquetaTime.new
 
       texto = aplicador.aplicar_time(texto)
 

@@ -1,6 +1,6 @@
 require_relative '../model/etiquetas'
 
-class Etiqueta_time
+class EtiquetaTime
 
   def aplicar (cadena, json_entrada)
     cadena = aplicar_time(cadena)
