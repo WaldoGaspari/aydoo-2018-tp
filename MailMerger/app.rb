@@ -22,6 +22,12 @@ post '/' do
     halt 500, json({ "resultado": "error, entrada incorrecta"})
   end
 
-  merger.enviar_mails(json_parseado, enviador_mails)
-  json({ "resultado": "ok"})
+  begin
+    merger.enviar_mails(json_parseado, enviador_mails)
+    json({ "resultado": "ok"})
+  rescue
+    halt 500, json({ "resultado": "error, etiquetas incompletas"})
+  end
+
+
 end

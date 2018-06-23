@@ -128,7 +128,7 @@ describe 'enviar mails a traves de un JSON' do
     expect(merger.enviar_mails(json, mandador_mail)).to be_truthy
   end
 
-  it 'deberia romper cuando hay una etiqueta que no se pudo reemplazar' do
+  it 'deberia lanzar una excepcion cuando hay una etiqueta que no se pudo reemplazar' do
     json_con_etiquetas_de_mas = {
         "template":"<saludo> <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>",
         "contactos":[
@@ -147,6 +147,6 @@ describe 'enviar mails a traves de un JSON' do
     }
 
     mandador_mail = double(EnvioDeMails.new)
-    expect{merger.enviar_mails(json_con_etiquetas_de_mas,mandador_mail)}.to  raise_error ArgumentError, 'La etiqueta: saludo no pudo ser reemplazada(no existe como dato, contacto, ni es etiqueta espcial)'
+    expect{merger.enviar_mails(json_con_etiquetas_de_mas,mandador_mail)}.to  raise_error ArgumentError, 'La etiqueta: saludo no pudo ser reemplazada (no existe como dato, contacto, ni es una etiqueta especial)'
   end
 end
