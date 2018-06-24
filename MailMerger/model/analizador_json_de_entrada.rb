@@ -1,18 +1,22 @@
 require 'json'
+require_relative '../model/contactos_json_de_entrada_exception'
+require_relative '../model/datos_json_de_entrada_exception'
+require_relative '../model/plantilla_json_de_entrada_exception'
+require_relative '../model/etiqueta_json_de_entrada_exception'
 
-class JsonDeEntradaException
+class AnalizadorJsonDeEntrada
 
   def analizar_json_de_entrada(json_de_entrada)
     if (json_de_entrada['contactos'].nil?)
-      raise ArgumentError.new('No posee una lista de contactos.')
+      ContactosJsonDeEntradaException.new
     end
 
     if (json_de_entrada['datos'].nil?)
-      raise ArgumentError.new('No posee los datos para armar los mails.')
+      DatosJsonDeEntradaException.new
     end
 
     if (json_de_entrada['template'].nil?)
-      raise ArgumentError.new('No posee plantilla para armar los mails correspondientes.')
+      PlantillaJsonDeEntradaException.new
     end
   end
 
@@ -22,7 +26,7 @@ class JsonDeEntradaException
 
     lista_etiquetas.each do |etiqueta_iterada|
       etiqueta_sin_mayor_menor = etiqueta_iterada[1,etiqueta_iterada.length - 2]
-      raise ArgumentError.new("La etiqueta: #{etiqueta_sin_mayor_menor} no pudo ser reemplazada (no existe como dato, contacto, ni es una etiqueta especial)")
+      EtiquetaJsonDeEntradaException.new(etiqueta_sin_mayor_menor)
     end
   end
 end

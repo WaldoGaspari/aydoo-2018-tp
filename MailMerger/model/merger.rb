@@ -1,7 +1,7 @@
 require 'json'
 require_relative '../model/envio_de_mails'
 require_relative '../model/etiquetas'
-require_relative '../model/json_de_entrada_exception'
+require_relative '../model/analizador_json_de_entrada'
 
 class Merger
 
@@ -15,7 +15,7 @@ class Merger
     @mensaje_con_datos = self.llenar_plantilla(@mensaje_con_datos, datos)
 
     etiquetas = Etiquetas.new
-    analizador_json = JsonDeEntradaException.new
+    analizador_json = AnalizadorJsonDeEntrada.new
 
     destinatario.each do |destinatario_iterado|
       cuerpo_mail = @mensaje_con_datos

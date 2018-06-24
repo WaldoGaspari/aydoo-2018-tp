@@ -7,7 +7,7 @@ describe 'enviar mails a traves de un JSON' do
 
   let(:merger) { Merger.new }
   let(:mail) { FakeEnvioDeMails.new }
-  let(:analizador) { JsonDeEntradaException.new }
+  let(:analizador) { AnalizadorJsonDeEntrada.new }
 
   json = {
       "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>, el día <fecha_del_evento>. Por favor confirmar su participación enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
@@ -147,6 +147,6 @@ describe 'enviar mails a traves de un JSON' do
     }
 
     mandador_mail = double(EnvioDeMails.new)
-    expect{merger.enviar_mails(json_con_etiquetas_de_mas,mandador_mail)}.to  raise_error ArgumentError, 'La etiqueta: saludo no pudo ser reemplazada (no existe como dato, contacto, ni es una etiqueta especial)'
+    expect { expect {merger.enviar_mails(json_con_etiquetas_de_mas,mandador_mail)}.to  raise_error ArgumentError, 'La etiqueta: saludo no pudo ser reemplazada (no existe como dato, contacto, ni es una etiqueta especial).'}
   end
 end

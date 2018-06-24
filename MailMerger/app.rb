@@ -4,7 +4,7 @@ require 'json'
 require 'net/smtp'
 require_relative '../MailMerger/model/merger'
 require_relative '../MailMerger/model/envio_de_mails'
-require_relative '../MailMerger/model/json_de_entrada_exception'
+require_relative '../MailMerger/model/analizador_json_de_entrada'
 
 configure do
   set :bind, '0.0.0.0'
@@ -14,7 +14,7 @@ post '/' do
   json_parseado = JSON.parse(request.body.read)
   merger = Merger.new
   enviador_mails = EnvioDeMails.new
-  analizador_de_json = JsonDeEntradaException.new
+  analizador_de_json = AnalizadorJsonDeEntrada.new
 
   begin
     analizador_de_json.analizar_json_de_entrada(json_parseado)
