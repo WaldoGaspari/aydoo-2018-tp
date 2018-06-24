@@ -2,12 +2,7 @@ require_relative '../model/etiquetas'
 
 class EtiquetaTime
 
-  def aplicar (cadena, json_entrada)
-    cadena = aplicar_time(cadena)
-    cadena
-  end
-
-  def aplicar_time (cadena)
+  def aplicar(cadena, json_entrada)
     if (cadena.include? "<time>")
       hora = Time.now.strftime("%H:%M")
       cadena = cadena.gsub('<time>', hora)

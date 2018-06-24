@@ -4,21 +4,67 @@ require 'json'
 
 class EtiquetasSpec
   describe 'etiqueta date' do
-
+      
     it 'aplico etiqueta directa' do
+      json_mentira = {
+          "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollarÃ¡ en <lugar_del_evento>, el dÃ­a <fecha_del_evento>. Por favor confirmar su participaciÃ³n enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
+          "contactos":[
+              {
+              "nombre":"juan",
+          "apellido":"perez",
+          "mail":"juanperez@test.com"
+      },
+          {
+              "nombre":"maria",
+              "apellido":"gonzalez",
+              "mail":"mariagonzalez@test.com"
+          }
+      ],
+          "datos":{
+          "asunto":"InvitaciÃ³n a fiesta de fin de aÃ±o",
+          "nombre_evento":"la cena de fin de aÃ±o de la UNTREF",
+          "lugar_evento":"el Centro de estudios (avenida Directorio 887, Caseros)",
+          "fecha_del_evento":"5 de diciembre",
+          "Mail_de_confirmacion":"fiesta@untref.com",
+          "pais":"uruguay"
+      }
+      }
       texto = " asf <date:d> aomimv "
       aplicador = EtiquetaFecha.new
 
-      texto = aplicador.aplicar_fechas(texto)
+      texto = aplicador.aplicar(texto,json_mentira)
 
       expect(texto).to eq " asf #{Date.today.strftime("%d-%m-%Y")} aomimv "
     end
 
     it 'aplico etiqueta inversa' do
+            json_mentira = {
+          "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollarÃ¡ en <lugar_del_evento>, el dÃ­a <fecha_del_evento>. Por favor confirmar su participaciÃ³n enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
+          "contactos":[
+              {
+              "nombre":"juan",
+          "apellido":"perez",
+          "mail":"juanperez@test.com"
+      },
+          {
+              "nombre":"maria",
+              "apellido":"gonzalez",
+              "mail":"mariagonzalez@test.com"
+          }
+      ],
+          "datos":{
+          "asunto":"InvitaciÃ³n a fiesta de fin de aÃ±o",
+          "nombre_evento":"la cena de fin de aÃ±o de la UNTREF",
+          "lugar_evento":"el Centro de estudios (avenida Directorio 887, Caseros)",
+          "fecha_del_evento":"5 de diciembre",
+          "Mail_de_confirmacion":"fiesta@untref.com",
+          "pais":"uruguay"
+      }
+      }
       texto = " asf <date:i> aomimv "
       aplicador = EtiquetaFecha.new
 
-      texto = aplicador.aplicar_fechas(texto)
+      texto = aplicador.aplicar(texto,json_mentira)
 
       expect(texto).to eq " asf #{Date.today.strftime("%Y-%m-%d")} aomimv "
     end
@@ -54,7 +100,7 @@ class EtiquetasSpec
 
       aplicador = EtiquetaEmpty.new
 
-      texto = aplicador.aplicar_empty(texto, js)
+      texto = aplicador.aplicar(texto, js)
 
       expect(texto).to eq " asf uruguay aomimv "
     end
@@ -87,7 +133,7 @@ class EtiquetasSpec
 
       aplicador = EtiquetaEmpty.new
 
-      texto = aplicador.aplicar_empty(texto, js)
+      texto = aplicador.aplicar(texto, js)
 
       expect(texto).to eq " asf argentina aomimv "
     end
@@ -95,12 +141,35 @@ class EtiquetasSpec
   end
 
   describe 'etiqueta suma' do
+      json_mentira = {
+          "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollarÃ¡ en <lugar_del_evento>, el dÃ­a <fecha_del_evento>. Por favor confirmar su participaciÃ³n enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
+          "contactos":[
+              {
+              "nombre":"juan",
+          "apellido":"perez",
+          "mail":"juanperez@test.com"
+      },
+          {
+              "nombre":"maria",
+              "apellido":"gonzalez",
+              "mail":"mariagonzalez@test.com"
+          }
+      ],
+          "datos":{
+          "asunto":"InvitaciÃ³n a fiesta de fin de aÃ±o",
+          "nombre_evento":"la cena de fin de aÃ±o de la UNTREF",
+          "lugar_evento":"el Centro de estudios (avenida Directorio 887, Caseros)",
+          "fecha_del_evento":"5 de diciembre",
+          "Mail_de_confirmacion":"fiesta@untref.com",
+          "pais":"uruguay"
+      }
+      }
 
     it 'aplico suma' do
       texto = " asf <sum(17,23)>:asdvgev aomimv "
       aplicador = EtiquetaSuma.new
 
-      texto = aplicador.aplicar_suma(texto)
+      texto = aplicador.aplicar(texto,json_mentira)
 
       expect(texto).to eq " asf 40:asdvgev aomimv "
     end
@@ -109,7 +178,7 @@ class EtiquetasSpec
       texto = " asf <sm(17,23)>:asdvgev aomimv "
       aplicador = EtiquetaSuma.new
 
-      texto = aplicador.aplicar_suma(texto)
+      texto = aplicador.aplicar(texto,json_mentira)
 
       expect(texto).to eq " asf <sm(17,23)>:asdvgev aomimv "
     end
@@ -153,12 +222,34 @@ class EtiquetasSpec
   end
 
   describe 'etiqueta time' do
-
+      json_mentira = {
+          "template":"Hola <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollarÃ¡ en <lugar_del_evento>, el dÃ­a <fecha_del_evento>. Por favor confirmar su participaciÃ³n enviando un mail a <mail_de_confirmacion>.\n\rSin otro particular.La direccion",
+          "contactos":[
+              {
+              "nombre":"juan",
+          "apellido":"perez",
+          "mail":"juanperez@test.com"
+      },
+          {
+              "nombre":"maria",
+              "apellido":"gonzalez",
+              "mail":"mariagonzalez@test.com"
+          }
+      ],
+          "datos":{
+          "asunto":"InvitaciÃ³n a fiesta de fin de aÃ±o",
+          "nombre_evento":"la cena de fin de aÃ±o de la UNTREF",
+          "lugar_evento":"el Centro de estudios (avenida Directorio 887, Caseros)",
+          "fecha_del_evento":"5 de diciembre",
+          "Mail_de_confirmacion":"fiesta@untref.com",
+          "pais":"uruguay"
+      }
+      }
     it 'aplico etiqueta en formato 24hs' do
       texto = " asf <time> aomimv "
       aplicador = EtiquetaTime.new
 
-      texto = aplicador.aplicar_time(texto)
+      texto = aplicador.aplicar(texto,json_mentira)
 
       expect(texto).to eq " asf #{Time.now.strftime("%H:%M")} aomimv "
     end
@@ -167,7 +258,7 @@ class EtiquetasSpec
       texto = " asf <time:12> aomimv "
       aplicador = EtiquetaTime.new
 
-      texto = aplicador.aplicar_time(texto)
+      texto = aplicador.aplicar(texto,json_mentira)
 
       expect(texto).to eq " asf #{Time.now.strftime("%l:%M")} pm aomimv "
     end
