@@ -1,6 +1,6 @@
 require 'rspec'
 require_relative '../model/envio_de_mails'
-require_relative '../model/fake_envio_de_mails'
+require_relative '../spec/fake_envio_de_mails'
 require 'json'
 
 describe 'enviar mails' do
