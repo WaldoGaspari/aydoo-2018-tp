@@ -10,13 +10,9 @@ class Etiquetas
 
   def initialize
   	@todas_las_etiquetas = [EtiquetaFecha.new, EtiquetaEmpty.new, EtiquetaSuma.new, EtiquetaTime.new]
-    #@siguiente_funcion_etiqueta = EtiquetaFecha.new
   end
 
   def aplicar(cadena, json_entrada)
-    #@siguiente_funcion_etiqueta.aplicar(cadena, json_entrada)
-    #@todas_las_etiquetas.each do |etiqueta_iterada|
-    	#etiqueta_iterada.aplicar(cadena, json_entrada)
     cadena_modificada = cadena	
     i = 0
     for i in 0..(@todas_las_etiquetas.size - 1) do	
@@ -24,7 +20,6 @@ class Etiquetas
     	i == i + 1 
     end	
     cadena_modificada
-	#end
   end
   
 end

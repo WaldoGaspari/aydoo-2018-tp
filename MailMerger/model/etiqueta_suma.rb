@@ -1,17 +1,8 @@
-require_relative '../../MailMerger/model/etiqueta_empty'
+require_relative '../model/etiquetas'
 
-class EtiquetaSuma
-
-  def initialize
-    @siguiente_funcion_etiqueta = EtiquetaEmpty.new
-  end
+class EtiquetaSuma 
 
   def aplicar(cadena,json_entrada)
-    cadena = aplicar_suma(cadena)
-    @siguiente_funcion_etiqueta.aplicar(cadena, json_entrada)
-  end
-
-  def aplicar_suma(cadena)
     if (cadena.include?  "<sum(")
       indice_suma = cadena.index('<sum(')
       primer_numero = ""

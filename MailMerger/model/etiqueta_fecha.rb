@@ -1,6 +1,6 @@
-require_relative '../model/etiqueta_suma'
+require_relative '../model/etiquetas'
 
-class EtiquetaFecha
+class EtiquetaFecha #< Etiquetas
 
   def aplicar(cadena,json_entrada)
     fecha_directa = Date.today.strftime("%d-%m-%Y")
@@ -9,5 +9,5 @@ class EtiquetaFecha
     cadena = cadena.gsub("<date:i>", fecha_inversa)
     cadena
   end
-  
+
 end

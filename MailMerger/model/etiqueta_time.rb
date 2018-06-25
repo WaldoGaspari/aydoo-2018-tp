@@ -1,6 +1,6 @@
 require_relative '../model/etiquetas'
 
-class EtiquetaTime
+class EtiquetaTime 
 
   def aplicar(cadena, json_entrada)
     if (cadena.include? "<time>")

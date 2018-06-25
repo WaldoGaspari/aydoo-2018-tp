@@ -1,17 +1,8 @@
-require_relative '../model/etiqueta_time'
+require_relative '../model/etiquetas'
 
-class EtiquetaEmpty
+class EtiquetaEmpty 
 
-  def initialize
-    @siguiente_funcion_etiqueta = EtiquetaTime.new
-  end
-
-  def aplicar(cadena,json_entrada)
-    cadena = aplicar_empty(cadena,json_entrada)
-    @siguiente_funcion_etiqueta.aplicar(cadena, json_entrada)
-  end
-
-  def aplicar_empty(cadena, json_entrada)
+  def aplicar(cadena, json_entrada)
     if (cadena.include?  "<empty(")
       indice_empty = cadena.index('<empty(')
       campo_buscado = ""
