@@ -25,9 +25,10 @@ post '/' do
   begin
     merger.enviar_mails(json_parseado, enviador_mails)
     json({ "resultado": "ok"})
-  rescue
+  rescue RuntimeError
     halt 500, json({ "resultado": "error, etiquetas incompletas"})
+  rescue Errno::ECONNREFUSED
+    halt 500, json({ "resultado": "error, no se puede conectar al servidor de mail"})
   end
-
 
 end

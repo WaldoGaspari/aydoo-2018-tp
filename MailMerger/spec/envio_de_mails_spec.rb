@@ -5,7 +5,6 @@ require 'json'
 
 describe 'enviar mails' do
 
-
   let(:mandador_mail) { double(EnvioDeMails.new) }
 
   it 'se envian 2 mails dando los parametros' do

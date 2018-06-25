@@ -147,6 +147,6 @@ describe 'enviar mails a traves de un JSON' do
     }
 
     mandador_mail = double(EnvioDeMails.new)
-    expect { expect {merger.enviar_mails(json_con_etiquetas_de_mas,mandador_mail)}.to  raise_error ArgumentError, 'La etiqueta: saludo no pudo ser reemplazada (no existe como dato, contacto, ni es una etiqueta especial).'}
+    expect {merger.enviar_mails(json_con_etiquetas_de_mas,mandador_mail)}.to  raise_error RuntimeError, 'La etiqueta: saludo no pudo ser reemplazada (no existe como dato, contacto, ni es una etiqueta especial).'
   end
 end

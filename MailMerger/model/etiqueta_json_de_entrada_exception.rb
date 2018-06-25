@@ -1,4 +1,4 @@
-class EtiquetaJsonDeEntradaException < StandardError
+class EtiquetaJsonDeEntradaException < RuntimeError
 
 	def initialize (etiqueta_con_error)
 		raise "La etiqueta: #{etiqueta_con_error} no pudo ser reemplazada (no existe como dato, contacto, ni es una etiqueta especial)."
