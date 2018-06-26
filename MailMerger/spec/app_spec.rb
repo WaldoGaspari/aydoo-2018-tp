@@ -42,6 +42,21 @@ describe 'Tests app' do
       "Mail_de_confirmacion":"fiesta@untref.com"
   }
   }
+
+  json_etiquetas_demas = {
+    "template":"<saludo> <nombre>,\n\r Por medio del presente mail te estamos invitando a <nombre_evento>, que se desarrollará en <lugar_del_evento>",
+    "contactos":[
+       {
+          "nombre":"juan",
+          "apellido":"perez",
+          "mail":"aydoo@mailinator.com"
+       }
+    ],
+    "datos":{
+       "remitente": "universidad@untref.com",
+       "asunto":"Ejemplo 10: tag usado dos veces"
+    }
+  }
   it 'deberia devolver una respuesta ok' do
     EnvioDeMails.any_instance.stub(:enviar)
     jso = json_entrada.to_json
@@ -67,6 +82,17 @@ describe 'Tests app' do
     post '/', jso , "Content-Type" => "application/json"
     cuerpo_parseado = JSON.parse(last_response.body)
     expect(cuerpo_parseado['resultado']).to eq "error, entrada incorrecta"
+    expect(last_response.status).to eq(500)
+  end
+
+  it 'al usar un json de entrada con una etiqueta demas deberia devolver error, etiquetas incompletas' do
+    EnvioDeMails.any_instance.stub(:enviar)
+    jso = json_etiquetas_demas.to_json
+    post '/', jso , "Content-Type" => "application/json"
+
+    cuerpo_parseado = JSON.parse(last_response.body)
+
+    expect(cuerpo_parseado['resultado']).to eq "error, etiquetas incompletas"
     expect(last_response.status).to eq(500)
   end
 
