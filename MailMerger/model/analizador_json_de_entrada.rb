@@ -8,6 +8,7 @@ class AnalizadorJsonDeEntrada
 
   def analizar_json_de_entrada(json_de_entrada)
     if (json_de_entrada['contactos'].nil?)
+      puts "entra if (json_de_entrada['contactos'].nil?)"
       ContactosJsonDeEntradaException.new
     end
 

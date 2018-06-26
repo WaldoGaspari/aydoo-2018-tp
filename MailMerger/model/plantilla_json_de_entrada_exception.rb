@@ -1,6 +1,7 @@
 class PlantillaJsonDeEntradaException < StandardError
 
 	def initialize
-		raise "No posee plantilla para armar los mails correspondientes."
+		@mensaje = "No posee plantilla para armar los mails correspondientes."
+		raise @mensaje
 	end
 end

@@ -65,9 +65,7 @@ describe 'Tests app' do
     EnvioDeMails.any_instance.stub(:enviar)
     jso = json_incorrecto.to_json
     post '/', jso , "Content-Type" => "application/json"
-
     cuerpo_parseado = JSON.parse(last_response.body)
-
     expect(cuerpo_parseado['resultado']).to eq "error, entrada incorrecta"
     expect(last_response.status).to eq(500)
   end

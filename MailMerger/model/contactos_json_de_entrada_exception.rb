@@ -1,7 +1,10 @@
-class ContactosJsonDeEntradaException < StandardError
+require_relative '../model/json_entrada_exception'
+
+class ContactosJsonDeEntradaException < JsonEntradaException
 
 	def initialize
-		raise "No posee una lista de contactos."
+		@mensaje = "No posee una lista de contactos."
+		raise @mensaje
 	end
 end
 

@@ -2,6 +2,7 @@ require 'json'
 require_relative '../model/envio_de_mails'
 require_relative '../model/etiquetas'
 require_relative '../model/analizador_json_de_entrada'
+require_relative '../model/mail_server_unreachable_exception'
 
 class Merger
 
