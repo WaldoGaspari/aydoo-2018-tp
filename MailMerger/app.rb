@@ -6,6 +6,7 @@ require_relative '../MailMerger/model/merger'
 require_relative '../MailMerger/model/envio_de_mails'
 require_relative '../MailMerger/model/analizador_json_de_entrada'
 require_relative '../MailMerger/model/mail_server_unreachable_exception'
+require_relative '../MailMerger/model/etiqueta_json_de_entrada_exception'
 
 configure do
   set :bind, '0.0.0.0'
@@ -30,9 +31,8 @@ post '/' do
     json({ "resultado": "ok"})
   rescue MailServerUnreachableException
     halt 500, json({ "resultado": "error, no se puede conectar al servidor de mail"})
-  rescue EtiquetaJsonDeEntradaException
+  rescue RuntimeError
     halt 500, json({ "resultado": "error, etiquetas incompletas"})
-  
   end
 
 end

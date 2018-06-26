@@ -27,7 +27,7 @@ class AnalizadorJsonDeEntrada
 
     lista_etiquetas.each do |etiqueta_iterada|
       etiqueta_sin_mayor_menor = etiqueta_iterada[1,etiqueta_iterada.length - 2]
-      EtiquetaJsonDeEntradaException.new(etiqueta_sin_mayor_menor)
+      raise EtiquetaJsonDeEntradaException.new(etiqueta_sin_mayor_menor)
     end
   end
 end
