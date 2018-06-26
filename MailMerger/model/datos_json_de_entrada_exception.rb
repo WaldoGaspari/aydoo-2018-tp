@@ -1,6 +1,4 @@
-require_relative '../model/json_entrada_exception'
-
-class DatosJsonDeEntradaException < JsonEntradaException
+class DatosJsonDeEntradaException < StandardError
 
 	def initialize
 		raise "No posee los datos para armar los mails."

@@ -20,19 +20,17 @@ post '/' do
 
   begin
     analizador_de_json.analizar_json_de_entrada(json_parseado)
-  rescue JsonEntradaException => excepcion_generada
-    halt 500, json({ "resultado": "error, entrada incorrecta, motivo: #{excepcion_generada.mensaje}"})
-  rescue 
+  rescue
     halt 500, json({ "resultado": "error, entrada incorrecta"})
   end
 
   begin
     merger.enviar_mails(json_parseado, enviador_mails)
     json({ "resultado": "ok"})
-  rescue MailServerUnreachableException
-    halt 500, json({ "resultado": "error, no se puede conectar al servidor de mail"})
   rescue RuntimeError
     halt 500, json({ "resultado": "error, etiquetas incompletas"})
+  rescue MailServerUnreachableException
+    halt 500, json({ "resultado": "error, no se puede conectar con el servidor de mail"})
   end
 
 end

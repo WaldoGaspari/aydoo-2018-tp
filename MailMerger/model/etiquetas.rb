@@ -5,7 +5,6 @@ require_relative '../model/etiqueta_empty'
 require_relative '../model/etiqueta_suma'
 require_relative '../model/etiqueta_time'
 
-
 class Etiquetas
 
   def initialize

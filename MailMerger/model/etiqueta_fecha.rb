@@ -1,6 +1,6 @@
 require_relative '../model/etiquetas'
 
-class EtiquetaFecha #< Etiquetas
+class EtiquetaFecha
 
   def aplicar(cadena,json_entrada)
     fecha_directa = Date.today.strftime("%d-%m-%Y")
